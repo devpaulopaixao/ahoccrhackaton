@@ -1,0 +1,67 @@
+
+$theme-color: #0f2332;
+$height100: 100%;
+
+.logo{
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+ion-grid {
+    padding-top: 20%;
+    width:100%;
+    height: $height100;
+    background: #dfdfdf;
+}
+
+ion-row {
+    height: $height100;
+}
+
+ion-col {
+    border: 1px solid #488aff;
+    background: $theme-color;
+}
+
+ion-item{
+    padding-bottom: 10px;
+}
+
+ion-button {
+    font-weight: 300;
+}
+
+.login {
+    --background: #e3e3e3;
+    --color: #000;
+    font-size: 20px;
+    --border-radius: 2px;
+    --vertical-align: middle;
+    --inner-padding-end: 0px;
+}
+
+.register{
+    color: #e3e3e3;
+    padding-left: 12%;
+}
+
+.register a{
+    color: #ea5455;
+}
+
+#loginform{
+    width: 100%;
+}
+.error{
+    padding-bottom: 2px;
+    color: red;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+        background: $theme-color;
+    }
+    ion-col {
+        border: none;
+    }
+}

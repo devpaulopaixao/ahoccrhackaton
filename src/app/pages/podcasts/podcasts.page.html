@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Podcasts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let file of dados; let i = index" class="accordion-list" lines="none" detail="false" no-padding>
+    <ion-item tappable (click)="play(i)">
+      <ion-icon name="musical-notes" slot="start"></ion-icon>
+      <ion-label>
+        <h2>{{ file.titulo }}</h2>
+      </ion-label>
+      <ion-icon name="headset" slot="end" [hidden]="!file.playing"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

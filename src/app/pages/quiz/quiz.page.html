@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Teste de autoconhecimento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+
+    <ion-card [hidden]="start">
+      <ion-card-content>
+        <ion-item lines="none" class="ion-text-justify">
+          Centenas de pessoas estão trabalhando em novas
+          ideias e projetos para melhorar a sua vida profissional
+          nesta semana.
+          Ajude-os respondendo a apenas 6 perguntas simples
+          e que poderão ajudar todos os caminhoneiros.
+        </ion-item>
+        <div padding>
+          <ion-button color="primary" expand="full" (click)="begin()">Começar</ion-button>
+        </div>
+        <ion-item lines="none">
+
+        </ion-item>
+       </ion-card-content>
+    </ion-card>
+    
+    <ion-card [hidden]="!start">
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-list>
+            <ion-radio-group>
+              <ion-list-header class="ion-text-justify">
+                  <p>
+                    Sabemos que ao ficar horas na estrada, é normal se sentir solitário.
+                    Sentir-se sozinho te deixa mais:
+                  </p>                  
+              </ion-list-header>
+          
+              <ion-item lines="none">                
+                <ion-radio value="Ansioso" slot="start"></ion-radio>
+                <ion-label>Ansioso</ion-label>
+              </ion-item>
+
+              <ion-item lines="none">                
+                <ion-radio value="Preocupado" slot="start"></ion-radio>
+                <ion-label>Preocupado</ion-label>
+              </ion-item>
+
+              <ion-item lines="none">                
+                <ion-radio value="Desvalorizado" slot="start"></ion-radio>
+                <ion-label>Desvalorizado</ion-label>
+              </ion-item>
+
+              <ion-item lines="none">                
+                <ion-radio value="Inseguro" slot="start"></ion-radio>
+                <ion-label>Inseguro</ion-label>
+              </ion-item>
+
+              <ion-item lines="none">                
+                <ion-radio value="Depressivo" slot="start"></ion-radio>
+                <ion-label>Depressivo</ion-label>
+              </ion-item>
+
+              <ion-item lines="none">                
+                <ion-radio value="Desanimado" slot="start"></ion-radio>
+                <ion-label>Desanimado</ion-label>
+              </ion-item>
+          
+            </ion-radio-group>
+          </ion-list>
+
+        </ion-item>
+        
+        <div padding>
+          <ion-button color="primary" expand="full">Próxima</ion-button>
+        </div>
+
+       </ion-card-content>
+    </ion-card>
+
+
+   </ion-row>
+
+</ion-content>

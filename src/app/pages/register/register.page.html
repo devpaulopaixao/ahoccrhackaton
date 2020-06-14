@@ -1,0 +1,66 @@
+<ion-grid>
+
+  <div>
+    <ion-row justify-content-center align-items-center>
+      <ion-col align-self-center size-md="6" size-lg="8" size-xs="12">
+          <img class="logo" src="assets/img/AhoLogo.png" />
+      </ion-col>                
+    </ion-row>
+  </div>
+
+<form novalidate [formGroup]="registerform" id="registerform">
+  <ion-row justify-content-center>
+    
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+        <div padding>
+          <ion-item lines="none">
+            <ion-input type="text" [(ngModel)]="name" formControlName="name" placeholder="Nome"
+            [class.error1]="!registerform.controls.name.valid && registerform.controls.name.dirty"></ion-input>
+          </ion-item>
+
+          <div *ngIf="( registerform.get('name').hasError('pattern') ||registerform.get('name').hasError('required') ) && registerform.get('name').touched">
+            <div class="error" *ngIf="registerform.get('name').hasError('required') && registerform.get('name').touched">
+              Informe o nome
+            </div>
+          </div>
+
+          <ion-item lines="none">
+            <ion-input type="email" [(ngModel)]="email" formControlName="email" placeholder="Email"
+            [class.error1]="!registerform.controls.email.valid && registerform.controls.email.dirty"></ion-input>
+          </ion-item>
+
+          <div *ngIf="( registerform.get('email').hasError('pattern') ||registerform.get('email').hasError('required') ) && registerform.get('email').touched">
+            <div class="error" *ngIf="registerform.get('email').hasError('required') && registerform.get('email').touched">
+              Informe o email
+            </div>
+            <div class="error" *ngIf="registerform.get('email').hasError('pattern') && registerform.get('email').touched">
+              Email inválido
+            </div>
+          </div>
+  
+          <ion-item lines="none">
+            <ion-input type="password" [(ngModel)]="password" placeholder="Senha" formControlName="password"
+            [class.error1]="!registerform.controls.password.valid && registerform.controls.password.dirty"></ion-input>
+          </ion-item>
+          
+          <div *ngIf="( registerform.get('password').hasError('pattern') ||registerform.get('password').hasError('required') ) && registerform.get('password').touched">
+            <div class="error" *ngIf="registerform.get('password').hasError('required') && registerform.get('password').touched">
+              Informe a senha
+            </div>
+            <div class="error" *ngIf="registerform.get('password').hasError('minlength') && registerform.get('password').touched">
+              Mínimo 6 caracteres
+            </div>
+            <div class="error" *ngIf="registerform.get('password').hasError('maxlength') && registerform.get('password').touched">
+              Máximo 10 caracteres
+            </div>
+          </div>
+
+          <ion-button class="login" size="large" expand="full" [disabled]="!registerform.valid" (click)="register()">Registrar</ion-button>
+        </div>
+
+      </ion-col>
+    
+  </ion-row>
+</form>
+</ion-grid>

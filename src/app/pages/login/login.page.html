@@ -1,0 +1,61 @@
+  <ion-grid>
+
+    <div>
+      <ion-row justify-content-center align-items-center>
+        <ion-col align-self-center size-md="6" size-lg="8" size-xs="12">
+            <img class="logo" src="assets/img/AhoLogo.png" />
+        </ion-col>                
+      </ion-row>
+    </div>
+
+  <form novalidate [formGroup]="loginform" id="loginform">
+    <ion-row justify-content-center>
+      
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+          <div padding>
+            <ion-item lines="none">
+              <ion-input type="email" [(ngModel)]="email" formControlName="email" placeholder="Email"
+              [class.error1]="!loginform.controls.email.valid && loginform.controls.email.dirty"></ion-input>
+            </ion-item>
+
+            <div *ngIf="( loginform.get('email').hasError('pattern') ||loginform.get('email').hasError('required') ) && loginform.get('email').touched">
+              <div class="error" *ngIf="loginform.get('email').hasError('required') && loginform.get('email').touched">
+                Informe o email
+              </div>
+              <div class="error" *ngIf="loginform.get('email').hasError('pattern') && loginform.get('email').touched">
+                Email inválido
+              </div>
+            </div>
+    
+            <ion-item lines="none">
+              <ion-input type="password" [(ngModel)]="password" placeholder="Senha" formControlName="password"
+              [class.error1]="!loginform.controls.password.valid && loginform.controls.password.dirty"></ion-input>
+            </ion-item>
+            
+            <div *ngIf="( loginform.get('password').hasError('pattern') ||loginform.get('password').hasError('required') ) && loginform.get('password').touched">
+              <div class="error" *ngIf="loginform.get('password').hasError('required') && loginform.get('password').touched">
+                Informe a senha
+              </div>
+              <div class="error" *ngIf="loginform.get('password').hasError('minlength') && loginform.get('password').touched">
+                Mínimo 6 caracteres
+              </div>
+              <div class="error" *ngIf="loginform.get('password').hasError('maxlength') && loginform.get('password').touched">
+                Máximo 10 caracteres
+              </div>
+            </div>
+
+            <ion-button class="login" size="large" expand="full" [disabled]="!loginform.valid" (click)="login()">Entrar</ion-button>
+          </div>
+
+          <div padding>
+              <p class="register">
+                Ainda não é um membro? <a routerLink='/register'> registre-se </a>
+              </p>
+          </div>
+
+        </ion-col>
+      
+    </ion-row>
+  </form>
+  </ion-grid>

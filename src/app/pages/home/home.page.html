@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ <ion-row>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Uma solução pensando no seu bem estar!
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Não vemos somente o caminhoneiro, mas todo o ambiente em que está inserido e a sua visão deste mundo inclusive. Usamos o termo AHO, como conceito para nos conectar com você, familiares e profissionais da saúde de um jeito profundo e significativo.
+     </ion-card-content>
+  </ion-card>
+ </ion-row>
+
+ <ion-row>
+  <ion-card style="width: 100%;">
+    <ion-card-content [routerLink]="['/', 'quiz']">
+      <ion-item lines="none">
+        <ion-label>
+          <h2>Teste de autoconhecimento</h2>
+        </ion-label>
+        <ion-icon name="help-circle-outline" slot="end"></ion-icon>
+      </ion-item>
+     </ion-card-content>
+  </ion-card>
+ </ion-row>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "aho_sidemenu",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
